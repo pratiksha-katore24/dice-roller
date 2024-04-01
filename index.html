@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dice-roller</title>
+    <style>
+        body{
+            background-color: #52ACFF;
+            background-image: linear-gradient(180deg, #52ACFF 25%, #FFE32C 100%);
+            min-height: 100vh;;
+        }
+        .dice-img{
+            width:200px;
+            height:200px;
+            display: block;
+            margin: 20px auto;
+            
+        }
+        
+        
+        .app-title{
+            text-align: center;
+        }
+        .btn-roll{
+            width:250px;
+            display:block;
+            margin:20px auto;
+            font-size:30px;
+            padding:10px 20px;
+            border:none;
+            border-radius: 5px;
+            background-image: linear-gradient( 135deg, #F05F57 10%, #360940 100%);
+            color: #fff;
+            cursor: pointer;
+            
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 class="app-title">Roll the Dice</h1>
+
+    <img src="simple-dice.png" alt="dice" class="dice-img" id="dice-img"/>
+
+    <button class="btn-roll" onclick="roll()">Roll Dice</button>
+
+
+    <script>
+        function roll(){
+        const min = 1;
+        const max = 6;
+        const randomNumber=Math.round(Math.random() * (max-min) ) + min;
+        
+        const imgElement=document.getElementById('dice-img');
+
+        switch(randomNumber){
+            case 1:
+                imgElement.src='dice(1).png';
+                break;
+            case 2:
+                imgElement.src='dice (2).png';
+                break;
+            case 3:
+                imgElement.src='dice (3).png';
+                break;
+            case 4:
+                imgElement.src='dice (4).png';
+                break;
+
+            case 5:
+                imgElement.src='dice (5).png';
+                break;
+
+            case 6:
+                imgElement.src='dice (7).png';
+                break;
+            default:
+                imgElement.src='simple-dice.png';
+
+
+        }
+        
+        }
+        
+    </script>
+    
+</body>
+</html>
